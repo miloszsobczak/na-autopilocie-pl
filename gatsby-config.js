@@ -75,7 +75,7 @@ module.exports = {
         short_name: `NaAutopilocie`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#01a6ff`,
         display: `minimal-ui`,
         icon: `content/assets/autopilot_wheel.png`,
       },
