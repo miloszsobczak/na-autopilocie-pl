@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+import Social from "../components/social"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -25,13 +25,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        {post.frontmatter.software && (
+          <div className="blog-post__details">
+            {post.frontmatter.software.core && <p className="blog-post__details__software">
+              Wersja oprogramowania: <strong>{post.frontmatter.software.core}</strong>
+            </p>}
+            {post.frontmatter.software.maps && <p className="blog-post__details__software">
+              Wersja map: <strong href="#">{post.frontmatter.software.maps}</strong>
+            </p>}
+          </div>
+        )}
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
         <hr />
         <footer>
-          <Bio />
+          <Social />
         </footer>
       </article>
       <nav className="blog-post-nav">
@@ -79,8 +89,12 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMMM, YYYY", locale: "pl")
         description
+        software {
+          core
+          maps
+        }
       }
     }
   }

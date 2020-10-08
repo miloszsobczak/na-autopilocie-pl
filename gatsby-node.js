@@ -103,11 +103,17 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
       fields: Fields
     }
+    
+    type Software {
+      core: String
+      maps: String
+    }
 
     type Frontmatter {
       title: String
       description: String
       date: Date @dateformat
+      software: Software
     }
 
     type Fields {

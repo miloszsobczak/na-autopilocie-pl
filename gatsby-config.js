@@ -1,17 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Tesla Na Autopilocie w Polsce`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Miłosz Sobczak`,
+      summary: `programistę, krytycznego właściciela Tesli Model 3.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Testujemy jak autopilot zachowuje się na polskich drogach w różnych warunkach, w różnych miejscach.`,
+    siteUrl: `https://na-autopilocie.pl/`,
     social: {
-      twitter: `kylemathews`,
+      facebook: `TeslaNaAutopilocie`,
+      instagram: `TeslaNaAutopilocie`,
+      youtube: {
+        name: `NaAutopilocie`,
+        id: `UC4htSg3m57ogKPf0eMe276A`
+      }
     },
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'pl'
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -60,16 +71,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Tesla Na Autopilocie w Polsce`,
+        short_name: `NaAutopilocie`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/autopilot_wheel.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
