@@ -240,6 +240,12 @@ a:focus {
   text-decoration: none;
 }
 
+/* Images */
+
+img {
+  max-width: 100%;
+}
+
 /* Custom classes */
 
 .global-wrapper {
